@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_recommended"
+            android:icon="@drawable/ic_menu_recommended"
+            android:title="Recommended" />
+        <item
+            android:id="@+id/nav_favorite"
+            android:icon="@drawable/ic_menu_favorite"
+            android:title="Favorite" />
+        <item
+            android:id="@+id/nav_findbuddy"
+            android:icon="@drawable/ic_menu_findbuddy"
+            android:title="Find a buddy" />
+
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_food"
+                android:icon="@drawable/ic_menu_food"
+                android:title="Food" />
+            <item
+                android:id="@+id/nav_hotels"
+                android:icon="@drawable/ic_menu_hotels"
+                android:title="Hotels" />
+            <item
+                android:id="@+id/nav_transport"
+                android:icon="@drawable/ic_menu_transport"
+                android:title="Transport" />
+            <item
+                android:id="@+id/nav_attractions"
+                android:icon="@drawable/ic_menu_attractions"
+                android:title="Attractions" />
+            <item
+                android:id="@+id/nav_shopping"
+                android:icon="@drawable/ic_menu_shopping"
+                android:title="Shopping" />
+
+            <item
+                android:id="@+id/nav_cinema"
+                android:icon="@drawable/ic_menu_cinema"
+                android:title="Cinema" />
+        </menu>
+    </item>
+
+</menu>
