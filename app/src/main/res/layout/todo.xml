@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.travelmate.ToDoActivity">
+
+    <TextView
+        android:id="@+id/todoTv"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignBottom="@+id/todoTime"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/todoTime"
+        android:gravity="center_vertical"
+        android:paddingTop="20dp"
+        />
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="fill_parent"
+        android:id="@+id/todoTime"
+        android:layout_toLeftOf="@+id/completeBtn"
+        android:layout_alignBottom="@+id/completeBtn"
+        android:gravity="center_vertical"
+        android:layout_marginRight="0dp"
+        />
+
+    <ImageButton
+        android:id="@+id/completeBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_delete"
+        android:onClick="deleteTask" />
+</RelativeLayout>

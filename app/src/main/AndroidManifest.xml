@@ -19,6 +19,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ToDoActivity"
+            android:label="TodoList"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <receiver android:name=".AlarmReceiver">
+            <intent-filter>
+                <action android:name="com.travelmate.DISPLAY_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+
     </application>
+
+
 
 </manifest>
