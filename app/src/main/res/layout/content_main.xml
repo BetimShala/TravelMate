@@ -16,5 +16,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="shto"
+        android:id="@+id/btn"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/landscape"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="74dp"
+        tools:ignore="MissingConstraints"
+        />
 
 </android.support.constraint.ConstraintLayout>
