@@ -22,7 +22,7 @@ import java.util.zip.Inflater;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button btn,btnTodoActivity;
+    Button btn,btnu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,11 +44,20 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         btn = (Button)findViewById(R.id.btn);
+        btnu =(Button)findViewById(R.id.btnu);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,ToDoActivity.class);
+                Intent intent = new Intent(MainActivity.this,UsersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,LoginRegisterActivity.class);
                 startActivity(intent);
             }
         });
@@ -94,6 +103,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_favorite) {
 
         } else if (id == R.id.nav_findbuddy) {
+            Intent i = new Intent(getApplicationContext(),UsersActivity.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_hotels) {
 
@@ -103,7 +114,6 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if (id == R.id.nav_shopping) {
-
         }
         else if (id == R.id.nav_transport) {
 

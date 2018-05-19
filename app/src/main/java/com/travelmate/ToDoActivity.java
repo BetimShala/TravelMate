@@ -50,18 +50,10 @@ import java.util.Date;
 public class ToDoActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, TimePickerDialog.OnTimeSetListener {
 
     private ListView lsTodo;
-    private Button btn;
-    private ListAdapter tdAdapter;
     private ToDoListSQLHelper todoListSQLHelper;
 
     final Calendar c = Calendar.getInstance();
     public String todoTaskInput;
-    int requestCode;
-
-    public String getTodoTaskInput() {
-        return todoTaskInput;
-    }
-
     int hourU,minutesU;
 
 
@@ -123,8 +115,10 @@ public class ToDoActivity extends AppCompatActivity implements NavigationView.On
             AlertDialog.Builder todoTaskBuilder = new AlertDialog.Builder(this);
             todoTaskBuilder.setTitle("Make a plan for today");
             final EditText todoET = new EditText(this);
+            final TextView todoTimePicker = new TextView(this);
             todoET.setHint("write your plan...");
             todoTaskBuilder.setView(todoET);
+
             final ImageButton forDate = new ImageButton(this);
             //todoTaskBuilder.setView(forDate);
             todoTaskBuilder.setPositiveButton("Add Task", new DialogInterface.OnClickListener() {

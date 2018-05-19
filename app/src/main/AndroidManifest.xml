@@ -25,6 +25,16 @@
             android:label="TodoList"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".UsersActivity"
+            android:label="Guiders"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".LoginRegisterActivity"
+            android:label="Guiders"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
         <receiver android:name=".AlarmReceiver">
             <intent-filter>
