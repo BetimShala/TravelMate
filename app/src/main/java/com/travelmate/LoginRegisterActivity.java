@@ -11,11 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class LoginRegisterActivity extends AppCompatActivity {
 
     EditText fullName, email, password, age;
+    RadioGroup rg_gender,rg_roles;
     RadioButton male, female, tourist, guider;
     Button signUp;
     String gender, registerAs;
@@ -37,7 +39,8 @@ public class LoginRegisterActivity extends AppCompatActivity {
         tourist = (RadioButton)findViewById(R.id.tourist_radio_btn);
         guider = (RadioButton)findViewById(R.id.guider_radio_btn);
         signUp = (Button)findViewById(R.id.btn_signup);
-
+        rg_gender = (RadioGroup)findViewById(R.id.gender_radio_group);
+        rg_roles = (RadioGroup)findViewById(R.id.register_as_radio_group);
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,15 +48,9 @@ public class LoginRegisterActivity extends AppCompatActivity {
                 String strEmail = email.getText().toString();
                 String strPassword = password.getText().toString();
                 String strAge = age.getText().toString();
-                if(male.isSelected())
-                    gender = "Male";
-                else if(female.isSelected())
-                    gender = "Female";
+                gender =((RadioButton)findViewById(rg_gender.getCheckedRadioButtonId())).getText().toString();
+                registerAs = ((RadioButton)findViewById(rg_roles.getCheckedRadioButtonId())).getText().toString();
 
-                if(tourist.isSelected())
-                    registerAs = "Tourist";
-                else if(guider.isSelected())
-                    registerAs = "Guider";
 
  /*             if ((TextUtils.isEmpty(strFullName)) || (TextUtils.isEmpty(strEmail)) || (TextUtils.isEmpty(strPassword))
             || (TextUtils.isEmpty(strAge)) || (TextUtils.isEmpty(gender)) || (TextUtils.isEmpty(registerAs))){
@@ -61,6 +58,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
                 }
                 else {*/
+ Toast.makeText(getApplicationContext(),gender+" "+registerAs,Toast.LENGTH_LONG).show();
                     loginRegisterSQLHelper.addNewUser(fullName.getText().toString(),
                             email.getText().toString(),
                             password.getText().toString(),

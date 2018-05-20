@@ -46,11 +46,11 @@ public class UsersCursorAdapter extends CursorAdapter {
         fullname.setText("Fullname: "+name);
         phoneNum.setText("Phone number: "+phonenum);
         userAge.setText("Age: "+age);
-//        Log.i("gender",gender.toString());
-  //      if(gender == "Male")
-    //    {
+        Log.i("gender",gender.toString());
+        if(gender.equals("Male"))
+         {
             userImage.setImageDrawable(view.getResources().getDrawable(R.drawable.man1));
-        //}
-      //  else {userImage.setImageDrawable(view.getResources().getDrawable(R.drawable.woman));}
+         }
+         else {userImage.setImageDrawable(view.getResources().getDrawable(R.drawable.woman));}
     }
 }
