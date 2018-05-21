@@ -2,6 +2,8 @@ package com.travelmate;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
+import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
@@ -14,13 +16,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class LoginRegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
+
+
 
     EditText fullName, email, username, password, confirmpassword, age;
     RadioGroup rg_gender,rg_registeras;
     RadioButton male, female, tourist, guider;
     Button signUp;
     String selectedRdBtnGenderText, selectedRdBtnRegisterasText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,23 +65,43 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
 
     }
-    public void onRegister(View view){
-        String str_fullname = fullName.getText().toString();
-        String str_email = email.getText().toString();
-        String str_username = username.getText().toString();
-        String str_password = "";
-        if(password.getText().toString().equals(confirmpassword.getText().toString())){
-            str_password = password.getText().toString();
+    public void onRegister(View view) {
+        if (fullName.getText().toString().equals("") || email.getText().toString().equals("") || username.getText().toString().equals("") ||
+                password.getText().toString().equals("") || confirmpassword.getText().toString().equals("") || age.getText().toString().equals("")) {
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(RegisterActivity.this);
+            alertDialog.setTitle("Alert Dialog");
+            alertDialog.setMessage("Please fill all the fields!");
+            AlertDialog alertDialogMain = alertDialog.create();
+            alertDialogMain.show();
+        } else {
+            String str_fullname = fullName.getText().toString();
+            String str_email = email.getText().toString();
+            String str_username = username.getText().toString();
+            String str_password = "";
+            if (password.getText().toString().equals(confirmpassword.getText().toString())) {
+                str_password = password.getText().toString();
+            } else {
+                AlertDialog.Builder alertDialog1 = new AlertDialog.Builder(RegisterActivity.this);
+                alertDialog1.setTitle("Alert Dialog");
+                alertDialog1.setMessage("Password doesn't match!");
+                AlertDialog alertDialogMain1 = alertDialog1.create();
+                alertDialogMain1.show();
+            }
+            String str_age = age.getText().toString();
+            String strgender = selectedRdBtnGenderText;
+            String strregisterAs = selectedRdBtnRegisterasText;
+            String type = "register";
+            BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+            if(!(str_fullname.equals("") || str_email.equals("") || str_username.equals("") || str_password.equals("") || str_age.equals("") || strgender.equals("") || strregisterAs.equals(""))) {
+                backgroundWorker.execute(type, str_fullname, str_email, str_username, str_password, str_age, strgender, strregisterAs);
+            }
         }
-        else{
+    }
 
-        }
-        String str_age = age.getText().toString();
-        String strgender = selectedRdBtnGenderText;
-        String strregisterAs = selectedRdBtnRegisterasText;
-        String type = "register";
-        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, str_fullname, str_email, str_username, str_password, str_age, strgender, strregisterAs);
+
+    public void onLoginActivity(View view){
+        Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+        startActivity(intent);
     }
 
 }
