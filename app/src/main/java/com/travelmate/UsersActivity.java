@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import com.travelmate.data.*;
 /**
  * Created by Betim on 5/13/2018.
  */

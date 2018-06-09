@@ -1,4 +1,4 @@
-package com.travelmate;
+package com.travelmate.data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -16,13 +16,14 @@ public class LoginRegisterSQLHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "TravelMateDBContext";
     public static final String TABLE_NAME = "Register_Login";
     public static final String FULLNAME = "fullname";
+    public static final String USERNAME = "username";
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
     public static final String AGE = "age";
     public static final String GENDER = "gender";
-    public static final String REGISTER_AS = "registerAS";
+    public static final String REGISTER_AS = "registerAs";
     public static final String _ID = BaseColumns._ID;
-    public static final int DB_VER = 1;
+    public static final int DB_VER = 10;
 
     public LoginRegisterSQLHelper(Context context) {
         //1 is todo list database version
@@ -32,7 +33,7 @@ public class LoginRegisterSQLHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String createRegisterLoginTable = "CREATE TABLE " + TABLE_NAME + " ( _id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                FULLNAME + " TEXT, "+EMAIL+" TEXT UNIQUE,"+PASSWORD+" TEXT"+AGE+" INTEGER"+REGISTER_AS+" TEXT)";
+                FULLNAME + " TEXT, "+USERNAME+" TEXT, "+EMAIL+" TEXT UNIQUE,"+PASSWORD+" TEXT, "+AGE+" INTEGER, "+GENDER+" TEXT,"+REGISTER_AS+" TEXT)";
         sqLiteDatabase.execSQL(createRegisterLoginTable);
 
     }
@@ -43,11 +44,12 @@ public class LoginRegisterSQLHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public void addNewUser(String fullName,String email,String password,String gender,String registerAs,Integer age)
+    public void addNewUser(String fullName,String userName,String email,String password,String gender,String registerAs,Integer age)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(FULLNAME,fullName);
+        cv.put(USERNAME,userName);
         cv.put(EMAIL,email);
         cv.put(PASSWORD,password);
         cv.put(GENDER,gender);
@@ -72,5 +74,16 @@ public class LoginRegisterSQLHelper extends SQLiteOpenHelper {
         db.close();*/
         //cursor.moveToFirst();
         return userCursor;
+    }
+
+    public boolean isUser(String username,String password)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor exist = db.rawQuery("SELECT  * FROM "+TABLE_NAME+" WHERE "+USERNAME+"="+username+" and "+PASSWORD+"="+password, null);
+
+        if (exist.getCount()>=1)
+            return true;
+        else
+            return false;
     }
 }
