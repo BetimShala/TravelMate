@@ -1,4 +1,4 @@
-package com.travelmate;
+package com.travelmate.services;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -8,6 +8,7 @@ import android.util.TimeUtils;
 
 import java.text.DateFormat;
 import java.util.Calendar;
+import com.travelmate.R;
 
 /**
  * Created by Betim on 5/12/2018.

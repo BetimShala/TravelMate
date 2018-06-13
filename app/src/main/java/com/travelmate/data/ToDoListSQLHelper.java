@@ -1,4 +1,4 @@
-package com.travelmate;
+package com.travelmate.data;
 
 /**
  * Created by Betim on 5/10/2018.
@@ -22,7 +22,7 @@ public class ToDoListSQLHelper extends SQLiteOpenHelper {
     public static final String COL1_TASK = "todo";
     public static final String COL2_TASK = "time";
     public static final String _ID = BaseColumns._ID;
-    public static final int DB_VER = 3;
+    public static final int DB_VER = 7;
 
     public ToDoListSQLHelper(Context context) {
         //1 is todo list database version

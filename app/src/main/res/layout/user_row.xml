@@ -26,41 +26,53 @@
         android:layout_height="168dp">
 
         <TextView
-            android:id="@+id/txtAge"
+            android:id="@+id/txtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/txtEmail"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/txtPhone"
-            android:layout_marginTop="23dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:text="Age: "
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="78dp" />
+            android:layout_marginBottom="13dp"
+            android:text="Profile name: "
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtPhone"
+            android:id="@+id/txtEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/txtPhone"
             android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
+            android:layout_marginBottom="14dp"
             android:clickable="true"
-            android:text="Phone Number: "
+            android:text="Email: "
             android:textStyle="bold"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="39dp" />
 
         <TextView
-            android:id="@+id/txtName"
+            android:id="@+id/txtPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/txtPhone"
+            android:layout_above="@+id/txtAge"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="18dp"
             android:clickable="true"
-            android:text="Profile name: "
-            android:textStyle="bold" />
+            android:text="Phone: "
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="39dp" />
+
+
+        <TextView
+            android:id="@+id/txtAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="26dp"
+            android:text="Age: "
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="78dp" />
     </RelativeLayout>
 
 </LinearLayout>

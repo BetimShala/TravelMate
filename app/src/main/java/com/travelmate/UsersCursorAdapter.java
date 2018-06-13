@@ -34,23 +34,23 @@ public class UsersCursorAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         // Find fields to populate in inflated template
         TextView fullname = (TextView) view.findViewById(R.id.txtName);
-        TextView phoneNum = (TextView) view.findViewById(R.id.txtPhone);
+        TextView email = (TextView) view.findViewById(R.id.txtEmail);
         TextView userAge = (TextView)view.findViewById(R.id.txtAge);
         ImageView userImage = (ImageView) view.findViewById(R.id.profile);
         // Extract properties from cursor
         String gender = cursor.getString(cursor.getColumnIndexOrThrow("gender"));
         String name = cursor.getString(cursor.getColumnIndexOrThrow("fullname"));
-        String phonenum = cursor.getString(cursor.getColumnIndexOrThrow("email"));
+        String emaili = cursor.getString(cursor.getColumnIndexOrThrow("email"));
         String age = cursor.getString(cursor.getColumnIndex("age"));
         // Populate fields with extracted properties
         fullname.setText("Fullname: "+name);
-        phoneNum.setText("Phone number: "+phonenum);
+        email.setText("Phone number: "+emaili);
         userAge.setText("Age: "+age);
         Log.i("gender",gender.toString());
         if(gender.equals("Male"))
-         {
+        {
             userImage.setImageDrawable(view.getResources().getDrawable(R.drawable.man1));
-         }
-         else {userImage.setImageDrawable(view.getResources().getDrawable(R.drawable.woman));}
+        }
+        else {userImage.setImageDrawable(view.getResources().getDrawable(R.drawable.woman));}
     }
 }
