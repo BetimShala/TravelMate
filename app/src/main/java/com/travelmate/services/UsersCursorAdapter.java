@@ -1,4 +1,4 @@
-package com.travelmate;
+package com.travelmate.services;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.travelmate.R;
 
 /**
  * Created by Betim on 5/13/2018.
