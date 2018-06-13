@@ -59,10 +59,11 @@ public class MainActivity extends AppCompatActivity
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,UsersActivity.class);
+                Intent intent = new Intent(MainActivity.this,HotelsActivity.class);
                 startActivity(intent);
             }
         });
+        
     }
 
     @Override

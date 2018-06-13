@@ -40,6 +40,11 @@
             android:label="Guiders"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".HotelsActivity"
+            android:label="Guiders"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
     </application>
 
