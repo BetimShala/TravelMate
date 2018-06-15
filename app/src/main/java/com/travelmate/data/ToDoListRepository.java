@@ -15,7 +15,7 @@ import java.sql.SQLData;
 import java.sql.SQLInput;
 import java.util.ArrayList;
 
-public class ToDoListSQLHelper extends SQLiteOpenHelper {
+public class ToDoListRepository extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "TravelMateDBContext";
     public static final String TABLE_NAME = "TODO_LIST";
@@ -24,7 +24,7 @@ public class ToDoListSQLHelper extends SQLiteOpenHelper {
     public static final String _ID = BaseColumns._ID;
     public static final int DB_VER = 7;
 
-    public ToDoListSQLHelper(Context context) {
+    public ToDoListRepository(Context context) {
         //1 is todo list database version
         super(context, DB_NAME, null, DB_VER);
     }

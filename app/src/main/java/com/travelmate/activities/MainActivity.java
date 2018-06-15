@@ -1,4 +1,4 @@
-package com.travelmate;
+package com.travelmate.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
+import com.travelmate.R;
 
 import java.util.zip.Inflater;
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        
+
     }
 
     @Override
