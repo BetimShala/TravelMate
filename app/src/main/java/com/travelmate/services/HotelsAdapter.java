@@ -39,7 +39,7 @@ public class HotelsAdapter extends ArrayAdapter<Hotels> {
         ImageView image = (ImageView) gridView.findViewById(R.id.grid_item_image);
         TextView  name = (TextView) gridView.findViewById(R.id.grid_item_name);
 
-        name.setText(hotels.get(position).getName());
+        name.setText(hotels.get(position).getCity() + " Hotel");
         //Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(imageView);
 
         Picasso.get().load(hotels.get(position).getUrlImages().get(0)).resize(400,400).into(image);
