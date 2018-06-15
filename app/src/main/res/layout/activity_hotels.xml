@@ -9,7 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_hotels">
-
     <GridView
         android:id="@+id/gv"
         android:layout_width="match_parent"
