@@ -24,7 +24,6 @@ public class LoginRegisterSQLHelper extends SQLiteOpenHelper {
     public static final String REGISTER_AS = "registerAs";
     public static final String _ID = BaseColumns._ID;
     public static final int DB_VER = 10;
-
     public LoginRegisterSQLHelper(Context context) {
         //1 is todo list database version
         super(context, DB_NAME, null, DB_VER);
@@ -79,10 +78,11 @@ public class LoginRegisterSQLHelper extends SQLiteOpenHelper {
     public boolean isUser(String username,String password)
     {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor exist = db.rawQuery("SELECT  * FROM "+TABLE_NAME+" WHERE "+USERNAME+"="+username+" and "+PASSWORD+"="+password, null);
+        Cursor exist = db.rawQuery("SELECT  * FROM "+TABLE_NAME+" WHERE "+USERNAME+"='"+username+"' and "+PASSWORD+"='"+password+"';", null);
 
-        if (exist.getCount()>=1)
-            return true;
+        if (exist.getCount()>=1){
+
+            return true;}
         else
             return false;
     }

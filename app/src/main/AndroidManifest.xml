@@ -45,6 +45,11 @@
             android:label="Guiders"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".NavInfo"
+            android:label="Guiders"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
     </application>
 
