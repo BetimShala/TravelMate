@@ -1,5 +1,6 @@
 package com.travelmate.activities;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,8 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.travelmate.R;
 import com.travelmate.data.*;
@@ -28,7 +31,7 @@ public class UsersActivity extends AppCompatActivity implements NavigationView.O
     private ImageView img;
     private LoginRegisterRepository usersSQLHelper;
     Cursor userCursor;
-
+    TextView txtName, txtEmail;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,19 @@ public class UsersActivity extends AppCompatActivity implements NavigationView.O
 
         usersSQLHelper = new LoginRegisterRepository(this);
         userList = (ListView) findViewById(R.id.listUsers);
+
+        Intent i = getIntent();
+        String fullname = i.getStringExtra("fullname");
+        String email = i.getStringExtra("email");
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_user);
+        navigationView.setNavigationItemSelectedListener(this);
+        View header=navigationView.getHeaderView(0);
+        txtName = (TextView)header.findViewById(R.id.txtNameView);
+        txtEmail = (TextView)header.findViewById(R.id.txtEmailView);
+        txtName.setText(fullname);
+        txtEmail.setText(email);
+
 
        getUsers();
        //delete();
@@ -52,7 +68,7 @@ public class UsersActivity extends AppCompatActivity implements NavigationView.O
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_user);
+
         navigationView.setNavigationItemSelectedListener(this);
     }
 
