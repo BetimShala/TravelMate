@@ -50,6 +50,11 @@
             android:label="Guiders"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity
+            android:name=".activities.WelcomeActivity"
+            android:label="Guiders"
+            android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>
