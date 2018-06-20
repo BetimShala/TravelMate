@@ -9,9 +9,22 @@
     tools:openDrawer="start"
     >
 
-    <include
-        layout="@layout/content_welcome"
+    <FrameLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+
+    <ViewFlipper
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:id="@+id/v_flipper">
+    </ViewFlipper>
+
+        <include
+            layout="@layout/content_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
 
 </android.support.v4.widget.DrawerLayout>
