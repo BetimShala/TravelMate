@@ -144,7 +144,7 @@ public class HotelsActivity extends AppCompatActivity   {
         i.putExtra("phone","(212)885-443");
         i.putExtra("star",hotels.get(position).getStars());
         i.putExtra("main_pic",hotels.get(position).getUrlImages().get(0));
-
+        i.putExtra("description",hotels.get(position).getDescription());
 
         HotelsActivity.this.startActivity(i);
 

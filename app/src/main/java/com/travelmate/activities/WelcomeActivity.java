@@ -27,7 +27,7 @@ public class WelcomeActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_welcome);
 
         getWindow().getDecorView().setBackgroundColor(Color.WHITE);
 
@@ -61,7 +61,7 @@ public class WelcomeActivity extends AppCompatActivity
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WelcomeActivity.this,HotelsActivity.class);
+                Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });

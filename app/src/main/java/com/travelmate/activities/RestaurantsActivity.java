@@ -21,6 +21,7 @@ import android.widget.GridView;
 import android.widget.ListAdapter;
 import android.widget.Toast;
 import com.travelmate.R;
+import com.travelmate.services.GeneralAdapter;
 
 import com.travelmate.data.Restaurants;
 import com.travelmate.services.RestaurantsAdapter;
@@ -79,11 +80,13 @@ public class RestaurantsActivity extends AppCompatActivity   {
                     throw new IOException("Unexpected code " + response);
 
                 } else{
-
+                    JSONObject body=null;
+                    JSONArray aRestaurants=null;
                     try {
-                        JSONArray body = new JSONArray(response.body().string());
+                         body = new JSONObject(response.body().string());
+                         aRestaurants = body.getJSONArray("restaurants");
                         for (int i = 0; i < 10; i++) {
-                            JSONObject item = body.getJSONObject(i);
+                            JSONObject item = aRestaurants.getJSONObject(i);
                             restaurants.add(new Restaurants(item.getString("name"),
                                     item.getString("country"),
                                     item.getString("city"),
@@ -96,8 +99,8 @@ public class RestaurantsActivity extends AppCompatActivity   {
                             ));
                         }
                     } catch (JSONException e) {
-                        Log.i("eeee", e.getMessage());
-                        Toast.makeText(getApplicationContext(),e.getMessage().toString(),Toast.LENGTH_LONG).show();
+                        Log.e("eeee", e.getMessage()+"\n   =   \n"+body.toString() + "\n ----- \n"+aRestaurants.toString());
+                        //Toast.makeText(getApplicationContext(),e.getMessage().toString(),Toast.LENGTH_LONG).show();
                     }
                     RestaurantsActivity.this.runOnUiThread(new Runnable() {
                         @Override
