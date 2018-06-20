@@ -42,7 +42,7 @@
             android:label="Guiders"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.HotelDetailsActivity"
+            android:name=".activities.DetailsActivity"
             android:label="Guiders"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

@@ -181,8 +181,6 @@ public class ToDoActivity extends AppCompatActivity implements NavigationView.On
             if (id == R.id.nav_recommended) {
                 Toast.makeText(getApplicationContext(),"Recommended",Toast.LENGTH_LONG).show();
 
-            } else if (id == R.id.nav_favorite) {
-
             } else if (id == R.id.nav_findbuddy) {
 
             } else if (id == R.id.nav_hotels) {
@@ -192,12 +190,7 @@ public class ToDoActivity extends AppCompatActivity implements NavigationView.On
             } else if (id == R.id.nav_cinema) {
 
             }
-            else if (id == R.id.nav_shopping) {
 
-            }
-            else if (id == R.id.nav_transport) {
-
-            }
             else if (id == R.id.nav_attractions) {
 
             }

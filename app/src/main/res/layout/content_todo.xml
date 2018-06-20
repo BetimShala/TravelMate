@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.travelmate.ToDoActivity"
+    tools:context="com.travelmate.activities.ToDoActivity"
     tools:showIn="@layout/app_bar_todo">
-    `
+
 <ListView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

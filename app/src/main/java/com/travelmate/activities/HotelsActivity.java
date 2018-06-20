@@ -1,24 +1,16 @@
 package com.travelmate.activities;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ListAdapter;
 import android.widget.Toast;
 import com.travelmate.R;
 
@@ -136,7 +128,7 @@ public class HotelsActivity extends AppCompatActivity   {
 
     private void openDetailActivity(ArrayList<Hotels> hotels,int position)
     {
-        Intent i=new Intent(HotelsActivity.this,HotelDetailsActivity.class);
+        Intent i=new Intent(HotelsActivity.this,DetailsActivity.class);
         i.putExtra("name",hotels.get(position).getCity()+" Hotel");
         i.putExtra("location",hotels.get(position).getCountry());
         i.putExtra("message","hotel@"+hotels.get(position).getCity().toLowerCase()+".com");

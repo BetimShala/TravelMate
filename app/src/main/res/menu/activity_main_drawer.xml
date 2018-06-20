@@ -9,10 +9,6 @@
             android:icon="@drawable/ic_menu_recommended"
             android:title="Recommended" />
         <item
-            android:id="@+id/nav_favorite"
-            android:icon="@drawable/ic_menu_favorite"
-            android:title="Favorite" />
-        <item
             android:id="@+id/nav_findbuddy"
             android:icon="@drawable/ic_menu_findbuddy"
             android:title="Find a buddy" />
@@ -30,17 +26,9 @@
                 android:icon="@drawable/ic_menu_hotels"
                 android:title="Hotels" />
             <item
-                android:id="@+id/nav_transport"
-                android:icon="@drawable/ic_menu_transport"
-                android:title="Transport" />
-            <item
                 android:id="@+id/nav_attractions"
                 android:icon="@drawable/ic_menu_attractions"
                 android:title="Attractions" />
-            <item
-                android:id="@+id/nav_shopping"
-                android:icon="@drawable/ic_menu_shopping"
-                android:title="Shopping" />
 
             <item
                 android:id="@+id/nav_cinema"

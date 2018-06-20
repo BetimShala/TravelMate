@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Prishtina City Guide</string>
+    <string name="app_name">TravelMate City Guide</string>
 
     <string name="navigation_drawer_open">Open navigation</string>
     <string name="navigation_drawer_close">Close navigation</string>

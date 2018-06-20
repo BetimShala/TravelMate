@@ -10,8 +10,16 @@ public class Restaurants {
     //https://fake-hotel-api.herokuapp.com/api/hotels
     //Hotels
 
-    private String Name,Country,City,Address,UrlImage,Phone;
+    private String Name,Country,City,Address,UrlImage,Phone,Price;
     private double Lat,Log,Rating;
+
+    public String getPrice() {
+        return Price;
+    }
+
+    public void setPrice(String price) {
+        Price = price;
+    }
 
     public String getName() {
         return Name;
@@ -85,7 +93,7 @@ public class Restaurants {
         Phone = phone;
     }
 
-    public Restaurants(String name, String country, String city, String address,String phone, double lat, double log, double rating, String urlImage) {
+    public Restaurants(String name, String country, String city, String address,String phone, double lat, double log, double rating, String urlImage,String price) {
         Name = name;
         Country = country;
         City = city;
@@ -95,6 +103,7 @@ public class Restaurants {
         Log = log;
         Rating = rating;
         UrlImage = urlImage;
+        Price = price;
     }
 
 }
