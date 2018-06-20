@@ -21,7 +21,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * Created by Betim on 6/10/2018.
  */
 
-public class HotelDetailsActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class DetailsActivity extends AppCompatActivity{
     ImageView main_pic,info,pin,message,price,phone,star1,star2,star3,star4,star5;
     TextView name,location,contact,price_night,phone_contact,description;
 
@@ -32,7 +32,7 @@ public class HotelDetailsActivity extends AppCompatActivity implements OnMapRead
 
         /*SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(HotelDetailsActivity.this);
+        mapFragment.getMapAsync(DetailsActivity.this);
 */
         main_pic = (ImageView)findViewById(R.id.main_pic);
 
@@ -94,7 +94,7 @@ public class HotelDetailsActivity extends AppCompatActivity implements OnMapRead
 
     }
 
-    @Override
+    /*@Override
     public void onMapReady(GoogleMap googleMap) {
         // Add a marker in Sydney, Australia,
         // and move the map's camera to the same location.
@@ -102,5 +102,5 @@ public class HotelDetailsActivity extends AppCompatActivity implements OnMapRead
         googleMap.addMarker(new MarkerOptions().position(sydney)
                 .title("Marker in Sydney"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-    }
+    }*/
 }
