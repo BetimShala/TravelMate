@@ -41,17 +41,11 @@ public class UsersActivity extends AppCompatActivity implements NavigationView.O
         usersSQLHelper = new LoginRegisterRepository(this);
         userList = (ListView) findViewById(R.id.listUsers);
 
-        Intent i = getIntent();
-        String fullname = i.getStringExtra("fullname");
-        String email = i.getStringExtra("email");
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_user);
         navigationView.setNavigationItemSelectedListener(this);
-        View header=navigationView.getHeaderView(0);
-        txtName = (TextView)header.findViewById(R.id.txtNameView);
-        txtEmail = (TextView)header.findViewById(R.id.txtEmailView);
-        txtName.setText(fullname);
-        txtEmail.setText(email);
+
 
 
 

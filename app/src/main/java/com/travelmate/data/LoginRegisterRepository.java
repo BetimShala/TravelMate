@@ -23,6 +23,7 @@ public class LoginRegisterRepository extends SQLiteOpenHelper {
     public static final String AGE = "age";
     public static final String GENDER = "gender";
     public static final String REGISTER_AS = "registerAs";
+    public static final String GUIDER = "Guider";
     public static final String _ID = BaseColumns._ID;
     public static final int DB_VER = 10;
     public  String fullname=null,email=null;
@@ -80,7 +81,7 @@ public class LoginRegisterRepository extends SQLiteOpenHelper {
 
     public Cursor getAllUsers() {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor userCursor = db.rawQuery("SELECT  * FROM "+TABLE_NAME, null);
+        Cursor userCursor = db.rawQuery("SELECT  * FROM "+TABLE_NAME + " WHERE "+REGISTER_AS+"='"+GUIDER+"'", null);
         //Cursor cursor = db.query(TABLE_NAME, new String[]{COL1_TASK,COL2_TASK}, null, null, null, null, null);
   /*      while (cursor.moveToNext()) {
             int index1 = cursor.getColumnIndex(COL1_TASK);

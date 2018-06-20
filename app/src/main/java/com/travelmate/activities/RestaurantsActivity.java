@@ -93,9 +93,10 @@ public class RestaurantsActivity extends AppCompatActivity   {
                                     item.getString("address"),
                                     item.getString("phone"),
                                     item.getDouble("lat"),
-                                    item.getDouble("log"),
+                                    item.getDouble("lng"),
                                     item.getDouble("price"),
-                                    item.getString("image_url")
+                                    item.getString("image_url"),
+                                    item.getString("price")
                             ));
                         }
                     } catch (JSONException e) {
@@ -136,11 +137,11 @@ public class RestaurantsActivity extends AppCompatActivity   {
 
     private void openDetailActivity(ArrayList<Restaurants> restaurants,int position)
     {
-        Intent i=new Intent(RestaurantsActivity.this,HotelDetailsActivity.class);
-        i.putExtra("name",restaurants.get(position).getCity()+" Hotel");
-        i.putExtra("location",restaurants.get(position).getCountry());
-        i.putExtra("message","restaurant@"+restaurants.get(position).getCity().toLowerCase()+".com");
-       // i.putExtra("price","$"+restaurants.get(position).get());
+        Intent i=new Intent(RestaurantsActivity.this,DetailsActivity.class);
+        i.putExtra("name",restaurants.get(position).getName());
+        i.putExtra("location",restaurants.get(position).getCountry()+"/"+restaurants.get(position).getCity()+"/"+restaurants.get(position).getAddress());
+        i.putExtra("message","restaurant@"+restaurants.get(position).getName().toLowerCase()+".com");
+        i.putExtra("price","noprice");
         i.putExtra("phone","(212)885-443");
         i.putExtra("star",restaurants.get(position).getRating());
         i.putExtra("main_pic",restaurants.get(position).getUrlImage());

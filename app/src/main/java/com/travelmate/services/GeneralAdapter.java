@@ -10,9 +10,5 @@ import android.support.v7.app.AppCompatActivity;
 
 public class GeneralAdapter extends AppCompatActivity{
 
-    public void changeActivity(Class cl)
-    {
-        Intent i = new Intent(getApplicationContext(),cl);
-        startActivity(i);
-    }
+
 }

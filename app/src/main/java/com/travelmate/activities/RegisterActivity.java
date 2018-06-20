@@ -37,30 +37,15 @@ public class RegisterActivity extends AppCompatActivity {
         rg_gender = (RadioGroup) findViewById(R.id.gender_radio_group);
         rg_registeras = (RadioGroup) findViewById(R.id.register_as_radio_group);
         signUp = (Button)findViewById(R.id.btn_signup);
-         selectedRdBtnGenderID = rg_gender.getCheckedRadioButtonId();
-         selectedRdBtnRegisterasID = rg_registeras.getCheckedRadioButtonId();
+         //selectedRdBtnGenderID = rg_gender.getCheckedRadioButtonId();
+         //selectedRdBtnRegisterasID = rg_registeras.getCheckedRadioButtonId();
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // If nothing is selected from Radio Group, then it return -1
-                if (selectedRdBtnGenderID != -1) {
-
-                    RadioButton selectedRdBtnGender = (RadioButton) findViewById(selectedRdBtnGenderID);
-                    selectedRdBtnGenderText = selectedRdBtnGender.getText().toString();
-
-                } else {
-
-                }
-
-                if (selectedRdBtnRegisterasID != -1) {
-
-                    RadioButton selectedRdBtnRegisteras = (RadioButton) findViewById(selectedRdBtnRegisterasID);
-                    selectedRdBtnRegisterasText = selectedRdBtnRegisteras.getText().toString();
-
-                } else {
-
-                }
+            //RadioButton selectedRdBtnGender = (RadioButton) findViewById(selectedRdBtnGenderID);
+              selectedRdBtnGenderText = ((RadioButton)findViewById(rg_gender.getCheckedRadioButtonId())).getText().toString();
+              selectedRdBtnRegisterasText = ((RadioButton)findViewById(rg_registeras.getCheckedRadioButtonId())).getText().toString();
                 if (fullName.getText().toString().equals("") || email.getText().toString().equals("") || username.getText().toString().equals("") ||
                         password.getText().toString().equals("") || confirmpassword.getText().toString().equals("") || age.getText().toString().equals("")) {
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(RegisterActivity.this);

@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -86,7 +87,12 @@ public class DetailsActivity extends AppCompatActivity{
         name.setText(hName);
         location.setText(hLocation);
         contact.setText(hMessage);
-        price_night.setText(hPrice+" per night");
+        if(hPrice.equals("noprice")){
+            price.setVisibility(ImageView.INVISIBLE);
+            price_night.setVisibility(TextView.INVISIBLE);
+        }
+        else
+            price_night.setText(hPrice+" per night");
         phone_contact.setText(hPhone);
         description.setText(hDesc);
 

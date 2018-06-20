@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.travelmate.R;
 
+import java.util.Random;
+
 /**
  * Created by Betim on 5/13/2018.
  */
@@ -35,9 +37,11 @@ public class UsersCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         // Find fields to populate in inflated template
+        Random random = new Random();
         TextView fullname = (TextView) view.findViewById(R.id.txtName);
         TextView email = (TextView) view.findViewById(R.id.txtEmail);
         TextView userAge = (TextView)view.findViewById(R.id.txtAge);
+        TextView phone = (TextView)view.findViewById(R.id.txtPhone);
         ImageView userImage = (ImageView) view.findViewById(R.id.profile);
         // Extract properties from cursor
         String gender = cursor.getString(cursor.getColumnIndexOrThrow("gender"));
@@ -46,8 +50,9 @@ public class UsersCursorAdapter extends CursorAdapter {
         String age = cursor.getString(cursor.getColumnIndex("age"));
         // Populate fields with extracted properties
         fullname.setText("Fullname: "+name);
-        email.setText("Phone number: "+emaili);
+        email.setText("Email: "+emaili);
         userAge.setText("Age: "+age);
+        phone.setText("Phone: +383"+String.valueOf(100000000 + random.nextInt(600000)));
         Log.i("gender",gender.toString());
         if(gender.equals("Male"))
         {
