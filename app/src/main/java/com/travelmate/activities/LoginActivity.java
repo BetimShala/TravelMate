@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         } while (CR.moveToNext());
         if (loginStatus) {
-            Intent i = new Intent(LoginActivity.this, UsersActivity.class);
+            Intent i = new Intent(LoginActivity.this, MainActivity.class);
             i.putExtra("fullname", fullname);
             i.putExtra("email", email);
             startActivity(i);
