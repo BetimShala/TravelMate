@@ -15,7 +15,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
+
 import com.travelmate.R;
 
 import java.util.zip.Inflater;
@@ -24,10 +27,19 @@ public class WelcomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Button btnLogin,btnRegister,btnContinue;
+    ViewFlipper v_flipper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+
+        int images[] = {R.drawable.w1, R.drawable.w2, R.drawable.w3};
+        v_flipper = findViewById(R.id.v_flipper);
+
+        for(int i=0; i<images.length; i++){
+            flipperImages(images[i]);
+        }
+
 
         getWindow().getDecorView().setBackgroundColor(Color.WHITE);
 
@@ -62,11 +74,28 @@ public class WelcomeActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
+                intent.putExtra("fullname","continue");
                 startActivity(intent);
             }
         });
 
     }
+
+    public void flipperImages(int image){
+        ImageView imageView = new ImageView(this);
+        imageView.setBackgroundResource(image);
+
+        v_flipper.addView(imageView);
+        v_flipper.setFlipInterval(3000);
+        v_flipper.setAutoStart(true);
+
+        //animation
+        v_flipper.setInAnimation(this, android.R.anim.slide_in_left);
+        v_flipper.setOutAnimation(this, android.R.anim.slide_out_right);
+
+    }
+
+
 
     @Override
     public void onBackPressed() {
