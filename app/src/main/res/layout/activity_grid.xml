@@ -15,9 +15,9 @@
         android:layout_height="wrap_content"
         android:numColumns="2"
         android:background="#ffffff"
-        android:columnWidth="90dp"
+        android:columnWidth="110dp"
         android:gravity="center"
-        android:horizontalSpacing="10dp"
+        android:horizontalSpacing="5dp"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="10dp"/>
+        android:verticalSpacing="5dp"/>
 </RelativeLayout>
