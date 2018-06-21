@@ -12,10 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="35dp"
         android:layout_marginTop="450dp"
-        android:layout_marginLeft="55dp"
         android:width="145dp"
         android:height="55dp"
+
         android:text="Login"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="217dp"

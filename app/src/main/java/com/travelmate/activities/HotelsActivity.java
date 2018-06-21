@@ -42,7 +42,7 @@ public class HotelsActivity extends AppCompatActivity   {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hotels);
+        setContentView(R.layout.activity_grid);
         getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         gvHotels = (GridView)findViewById(R.id.gv);
         hotels = new ArrayList<>();
@@ -97,7 +97,7 @@ public class HotelsActivity extends AppCompatActivity   {
                         HotelsActivity.this.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                adapter = new HotelsAdapter(HotelsActivity.this, R.layout.grid_hotels_layout);
+                                adapter = new HotelsAdapter(HotelsActivity.this, R.layout.grid_layout);
                                 adapter.hotels = hotels;
                                 gvHotels.setAdapter(adapter);
                             }

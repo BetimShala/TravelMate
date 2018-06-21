@@ -31,28 +31,25 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.RegisterActivity"
-            android:label="Guiders"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.LoginActivity"
-            android:label="Guiders"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.HotelsActivity"
-            android:label="Guiders"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.DetailsActivity"
-            android:label="Guiders"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.RestaurantsActivity"
-            android:label="Guiders"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".activities.MainActivity"
-            android:label="Guiders"
+            android:label="Recommended"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.CinemaActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
     </application>

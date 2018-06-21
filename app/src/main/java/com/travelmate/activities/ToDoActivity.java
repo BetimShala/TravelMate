@@ -8,6 +8,7 @@ import android.app.AlertDialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -50,15 +51,18 @@ public class ToDoActivity extends AppCompatActivity implements NavigationView.On
     public String getTodoTaskInput() {
         return todoTaskInput;
     }
-
+    String fullname;
+    NavigationView navigationView;
     int hourU,minutesU;
-
+    TextView txtName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitivity_todo);
 
+        Intent i = getIntent();
+        fullname = i.getStringExtra("fullname");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_todo);
         setSupportActionBar(toolbar);
@@ -78,6 +82,20 @@ public class ToDoActivity extends AppCompatActivity implements NavigationView.On
         lsTodo.setEmptyView(emptyText);
         loadTodoList();
 
+        View header=navigationView.getHeaderView(0);
+
+
+        txtName = (TextView)header.findViewById(R.id.txtNameView);
+        Menu nav_Menu = navigationView.getMenu();
+
+        if (fullname.equals("continue")) {
+            nav_Menu.findItem(R.id.nav_findbuddy).setVisible(false);        }
+        else
+        {
+            txtName.setText(fullname);
+            //txtEmail.setText(email);
+            nav_Menu.findItem(R.id.nav_findbuddy).setVisible(true);
+        }
 
     /*public void notificationService(int afterThisTime)
     {
@@ -179,22 +197,27 @@ public class ToDoActivity extends AppCompatActivity implements NavigationView.On
             int id = item.getItemId();
 
             if (id == R.id.nav_recommended) {
-                Toast.makeText(getApplicationContext(),"Recommended",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("fullname","continue");
+                startActivity(intent);
+
 
             } else if (id == R.id.nav_findbuddy) {
+                changeActivity(UsersActivity.class);
+
 
             } else if (id == R.id.nav_hotels) {
+                changeActivity(HotelsActivity.class);
+
 
             } else if (id == R.id.nav_food) {
+                changeActivity(RestaurantsActivity.class);
+
 
             } else if (id == R.id.nav_cinema) {
+                changeActivity(CinemaActivity.class);
 
             }
-
-            else if (id == R.id.nav_attractions) {
-
-            }
-
 
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_todo);
             drawer.closeDrawer(GravityCompat.START);
@@ -231,5 +254,11 @@ public class ToDoActivity extends AppCompatActivity implements NavigationView.On
         Log.i("sekondat",String.valueOf(totalSec));
         todoListRepository.addNewTask(todoTaskInput,String.valueOf(hourU)+":"+String.valueOf(minutesU));
         loadTodoList();
+    }
+
+    public void changeActivity(Class cl)
+    {
+        Intent i = new Intent(getApplicationContext(),cl);
+        startActivity(i);
     }
 }

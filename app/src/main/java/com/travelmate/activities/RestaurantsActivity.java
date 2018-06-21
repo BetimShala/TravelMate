@@ -52,7 +52,7 @@ public class RestaurantsActivity extends AppCompatActivity   {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_restaurants);
+        setContentView(R.layout.activity_grid);
         getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         gvRestaurants = (GridView)findViewById(R.id.gv);
         restaurants = new ArrayList<>();

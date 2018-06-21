@@ -96,7 +96,8 @@ public class DetailsActivity extends AppCompatActivity{
         phone_contact.setText(hPhone);
         description.setText(hDesc);
 
-        Picasso.get().load(hImg).resize(200,200).into(main_pic);
+        Picasso.get().load(hImg).resize(400,400).into(main_pic);
+
 
     }
 

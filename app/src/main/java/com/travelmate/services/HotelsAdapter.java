@@ -1,7 +1,6 @@
 package com.travelmate.services;
 
 import android.app.Activity;
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -26,7 +25,7 @@ public class HotelsAdapter extends ArrayAdapter<Hotels> {
     public Activity activity;
 
     public HotelsAdapter(@NonNull Activity activity, int resource) {
-        super(activity, R.layout.grid_hotels_layout);
+        super(activity, R.layout.grid_layout);
         this.activity = activity;
     }
 
@@ -34,7 +33,7 @@ public class HotelsAdapter extends ArrayAdapter<Hotels> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = activity.getLayoutInflater();
-        View gridView = inflater.inflate(R.layout.grid_hotels_layout,null,false);
+        View gridView = inflater.inflate(R.layout.grid_layout,null,false);
 
         ImageView image = (ImageView) gridView.findViewById(R.id.grid_item_image);
         TextView  name = (TextView) gridView.findViewById(R.id.grid_item_name);

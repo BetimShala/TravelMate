@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:numColumns="2"
-        android:background="#f4f6f9"
+        android:background="#ffffff"
         android:columnWidth="90dp"
         android:gravity="center"
         android:horizontalSpacing="10dp"

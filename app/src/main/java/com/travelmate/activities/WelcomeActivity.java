@@ -24,7 +24,7 @@ import com.travelmate.R;
 import java.util.zip.Inflater;
 
 public class WelcomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        {
 
     Button btnLogin,btnRegister,btnContinue;
     ViewFlipper v_flipper;
@@ -42,13 +42,6 @@ public class WelcomeActivity extends AppCompatActivity
 
 
         getWindow().getDecorView().setBackgroundColor(Color.WHITE);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
 
         btnLogin = (Button)findViewById(R.id.btnLogin);
@@ -95,70 +88,4 @@ public class WelcomeActivity extends AppCompatActivity
 
     }
 
-
-
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_recommended) {
-
-        } else if (id == R.id.nav_favorite) {
-
-        } else if (id == R.id.nav_findbuddy) {
-            Intent i = new Intent(getApplicationContext(),UsersActivity.class);
-            startActivity(i);
-
-        } else if (id == R.id.nav_hotels) {
-
-        } else if (id == R.id.nav_food) {
-
-        } else if (id == R.id.nav_cinema) {
-
-        }
-        else if (id == R.id.nav_shopping) {
-        }
-        else if (id == R.id.nav_transport) {
-
-        }
-        else if (id == R.id.nav_attractions) {
-
-        }
-
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 }

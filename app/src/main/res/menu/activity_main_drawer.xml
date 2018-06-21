@@ -12,6 +12,11 @@
             android:id="@+id/nav_findbuddy"
             android:icon="@drawable/ic_menu_findbuddy"
             android:title="Find a buddy" />
+        <item
+            android:id="@+id/action_add_task"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Add new task"
+            />
 
     </group>
 
@@ -25,10 +30,6 @@
                 android:id="@+id/nav_hotels"
                 android:icon="@drawable/ic_menu_hotels"
                 android:title="Hotels" />
-            <item
-                android:id="@+id/nav_attractions"
-                android:icon="@drawable/ic_menu_attractions"
-                android:title="Attractions" />
 
             <item
                 android:id="@+id/nav_cinema"

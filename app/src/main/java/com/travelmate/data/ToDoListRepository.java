@@ -22,7 +22,7 @@ public class ToDoListRepository extends SQLiteOpenHelper {
     public static final String COL1_TASK = "todo";
     public static final String COL2_TASK = "time";
     public static final String _ID = BaseColumns._ID;
-    public static final int DB_VER = 7;
+    public static final int DB_VER = 10;
 
     public ToDoListRepository(Context context) {
         //1 is todo list database version

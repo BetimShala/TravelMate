@@ -7,7 +7,27 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.travelmate.activities.MainActivity"
     tools:showIn="@layout/app_bar_main">
+        <ImageView
+            android:id="@+id/grid_item_image"
+            android:layout_width="fill_parent"
+            android:scaleType="fitCenter"
+            android:layout_height="200dp"
+            android:alpha=".75"
+            android:paddingLeft="3dip"
+            />
 
+        <TextView
+            android:id="@+id/grid_item_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
 
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:maxLines="2"
+            android:layout_marginTop="138dp"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:paddingLeft="3dip"
+            android:text="DASD"
+            android:textSize="20sp" />
+    </RelativeLayout>
 
-</RelativeLayout>

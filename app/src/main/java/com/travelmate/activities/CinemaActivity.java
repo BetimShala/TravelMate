@@ -44,7 +44,7 @@ public class CinemaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cinema);
+        setContentView(R.layout.activity_grid);
         getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         gvCinema = (GridView)findViewById(R.id.gv);
         cinemas = new ArrayList<>();
@@ -83,7 +83,7 @@ public class CinemaActivity extends AppCompatActivity {
 
                     try {
                         JSONArray body = new JSONArray(response.body().string());
-                        for (int i = 0; i <body.length(); i++) {
+                        for (int i = 0; i <6; i++) {
                             JSONObject item = body.getJSONObject(i);
                             cinemas.add(new Cinema(item.getString("name"),
                                    item.getString("address"),
@@ -130,11 +130,12 @@ public class CinemaActivity extends AppCompatActivity {
     private void openDetailActivity(ArrayList<Cinema> cinemas,int position)
     {
         Intent i=new Intent(CinemaActivity.this,DetailsActivity.class);
-        i.putExtra("name",cinemas.get(position).getName());
-        i.putExtra("location",cinemas.get(position).getAddress().split(",")[1]);
-        i.putExtra("message","cino@"+cinemas.get(position).getName().toLowerCase().trim().split(",")[0]+".com");
+        i.putExtra("name",cinemas.get(position).getName().split(",")[0]);
+        i.putExtra("location",cinemas.get(position).getName().split(",")[1]);
+        i.putExtra("message","www."+cinemas.get(position).getName().split(" ")[0].toLowerCase().trim()+".com");
         i.putExtra("phone",cinemas.get(position).getPhone());
         i.putExtra("star",5);
+        i.putExtra("price","noprice");
         i.putExtra("main_pic",cinemas.get(position).getUrlImage());
 
 

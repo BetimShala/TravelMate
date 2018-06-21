@@ -25,7 +25,7 @@ public class RestaurantsAdapter extends ArrayAdapter<Restaurants> {
     public Activity activity;
 
     public RestaurantsAdapter(@NonNull Activity activity, int resource) {
-        super(activity, R.layout.grid_restaurants_layout);
+        super(activity, R.layout.grid_layout);
         this.activity = activity;
     }
 
@@ -33,7 +33,7 @@ public class RestaurantsAdapter extends ArrayAdapter<Restaurants> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = activity.getLayoutInflater();
-        View gridView = inflater.inflate(R.layout.grid_restaurants_layout,null,false);
+        View gridView = inflater.inflate(R.layout.grid_layout,null,false);
 
         ImageView image = (ImageView) gridView.findViewById(R.id.grid_item_image);
         TextView  name = (TextView) gridView.findViewById(R.id.grid_item_name);
