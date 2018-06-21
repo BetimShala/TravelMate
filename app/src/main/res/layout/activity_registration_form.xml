@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context="com.travelmate.RegisterActivity">
+    tools:context="com.travelmate.activities.RegisterActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -42,6 +42,7 @@
                 android:ems="10"
                 android:inputType="textEmailAddress"
                 android:hint="Email"
+
                 />
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
@@ -181,18 +182,11 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="SIGN UP"
-            android:background="@android:color/darker_gray"
+            android:background="#efeaea"
             android:layout_marginTop="30dp"
             android:textColor="@android:color/black"
             />
-        <Button android:id="@+id/btn_link_login"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="ALREADY HAVE AN ACCOUNT"
-            android:background="@null"
-            android:layout_marginTop="3dp"
-            android:textColor="@android:color/black"
-            />
+
 
     </LinearLayout>
 
